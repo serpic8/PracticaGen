@@ -133,7 +133,7 @@ namespace pjList_Linq_Listview_
             {
                 foreach (var item in grupo)
                 {                                       
-                    ListViewItem fila = new ListViewItem(item.Nombres);
+                    ListViewItem fila = new ListViewItem(item.Nombres); //grupo.key funciona igual
                     fila.SubItems.Add(grupo.Count().ToString());
                     lvCantidad.Items.Add(fila);
                 }

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pjSueldo(Clases_Forms)", "p
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pjList(Listview)", "pjList-Linq(Listview)\pjList(Listview).csproj", "{2C47580E-49A8-432C-B5E1-4C55D1F6E5A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pjLista(Forms)", "pjLista(Forms)\pjLista(Forms).csproj", "{74C4B222-2DCB-4AB6-8FF5-82B09462DA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2C47580E-49A8-432C-B5E1-4C55D1F6E5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C47580E-49A8-432C-B5E1-4C55D1F6E5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C47580E-49A8-432C-B5E1-4C55D1F6E5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C4B222-2DCB-4AB6-8FF5-82B09462DA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C4B222-2DCB-4AB6-8FF5-82B09462DA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C4B222-2DCB-4AB6-8FF5-82B09462DA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C4B222-2DCB-4AB6-8FF5-82B09462DA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
