@@ -1,3 +1,6 @@
+using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
+
 namespace pjList_Linq_Listview_
 {
     public partial class Form1 : Form
@@ -38,14 +41,14 @@ namespace pjList_Linq_Listview_
                 lvAutores.Items.Add(fila);
             }
 
-            
+
             //Primera prueba de linq con listview y label
             IEnumerable<Autores> list = from aut in au  //aut(valor que devuelve el linq), au(nombre de la lista)
                                         where aut.Id == 1
                                         select aut;
             foreach (Autores item in list)
             {
-                
+
                 label1.Text = item.Nombres;
             }
 
@@ -57,7 +60,7 @@ namespace pjList_Linq_Listview_
             }
             //Segunda prueba linq
             IEnumerable<Autores> idPar = from par in au
-                                         where par.Id%2 == 0
+                                         where par.Id % 2 == 0
                                          select par;
             foreach (Autores item in idPar)
             {
@@ -86,7 +89,8 @@ namespace pjList_Linq_Listview_
                 new Lista_Libros(7,"Las aventuras de Alicia en el país de las maravillas", "Agatha Christie",1865,100),
                 new Lista_Libros(8,"Diez negritos", "C. S. Lewis",1939,100),
                 new Lista_Libros(9,"El león, la bruja y el armario", "Dan Brown",1950,85),
-                new Lista_Libros(10,"El código Da Vinci", "J. D. Salinger",2003,80)
+                new Lista_Libros(10,"El código Da Vinci", "J. D. Salinger",2003,80),
+                new Lista_Libros(1,"Migue","Miguel de Cervantes",1650,200)
             };
 
             //Aqui identifico los libros que comienzan por el
@@ -102,6 +106,45 @@ namespace pjList_Linq_Listview_
                 fila.SubItems.Add(item.Titulo);
                 lvEl.Items.Add(fila);
             }
+            //No puedo con lo del autor con mas libros
+            var masL = (from a in au
+                        join c in ll
+                       on a.Id equals c.Id
+                        group
+                       a by a.Nombres into masLibros
+                        orderby masLibros.Count() descending
+                        select masLibros).Take(1).ToList();
+            foreach (var grupo in masL)
+            {
+                foreach (var item in grupo)
+                {
+                    lblAutoresLibros.Text = item.Nombres;
+                }
+            }
+            //Autor y la cantidad de libros(Se miran dobles porque en ambas listas tiene nombre del autor)
+            var cantidadL = (from a in au
+                             join c in ll
+                             on a.Id equals c.Id
+                             group
+                             a by a.Nombres into cant
+                             select cant).ToList();
+
+            foreach (var grupo in cantidadL)
+            {
+                foreach (var item in grupo)
+                {
+                    ListViewItem fila = new ListViewItem(item.Nombres);
+                    fila.SubItems.Add(grupo.Count().ToString());
+                    lvCantidad.Items.Add(fila);
+                }
+            }
+
+            
+                        
+
+            
+                         
+                          
         }
 
         private void button1_Click(object sender, EventArgs e)

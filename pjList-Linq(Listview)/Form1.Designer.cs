@@ -47,6 +47,9 @@
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.label5 = new System.Windows.Forms.Label();
+            this.lvCantidad = new System.Windows.Forms.ListView();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lvAutores
@@ -207,11 +210,34 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "libros q comienzan por el";
             // 
+            // lvCantidad
+            // 
+            this.lvCantidad.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
+            this.columnHeader9});
+            this.lvCantidad.GridLines = true;
+            this.lvCantidad.Location = new System.Drawing.Point(357, 339);
+            this.lvCantidad.Name = "lvCantidad";
+            this.lvCantidad.Size = new System.Drawing.Size(173, 162);
+            this.lvCantidad.TabIndex = 12;
+            this.lvCantidad.UseCompatibleStateImageBehavior = false;
+            this.lvCantidad.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Autor";
+            this.columnHeader8.Width = 100;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Cantidad Libros";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 506);
+            this.Controls.Add(this.lvCantidad);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lvEl);
             this.Controls.Add(this.lblAutoresLibros);
@@ -253,5 +279,8 @@
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Label label5;
+        private ListView lvCantidad;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
     }
 }
