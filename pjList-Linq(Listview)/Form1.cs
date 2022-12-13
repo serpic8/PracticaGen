@@ -27,7 +27,7 @@ namespace pjList_Linq_Listview_
             au.Add(new Autores { Id = 1, Nombres = "Miguel de Cervantes" });
             au.Add(new Autores { Id = 2, Nombres = "Charles Dickens" });
             au.Add(new Autores { Id = 3, Nombres = "J. R. R. Tolkien" });
-            au.Add(new Autores { Id = 4, Nombres = "Antoine de Saint-Exupéry" });
+            au.Add(new Autores { Id = 4, Nombres = "Antoine de Saint-ExupÃ©ry" });
             au.Add(new Autores { Id = 5, Nombres = "Cao Xueqin" });
             au.Add(new Autores { Id = 6, Nombres = "Lewis Car" });
             au.Add(new Autores { Id = 7, Nombres = "Agatha Christie" });
@@ -82,14 +82,14 @@ namespace pjList_Linq_Listview_
             {
                 new Lista_Libros(1,"Don Quijote de la Mancha", "Miguel de Cervantes",1605,500),
                 new Lista_Libros(2,"Historia de dos ciudades", "Charles Dickens",1859,200),
-                new Lista_Libros(3,"El Señor de los Anillos", "J. R. R. Tolkien",1978,150),
-                new Lista_Libros(4,"El principito", "Antoine de Saint-Exupéry",1951,140),
+                new Lista_Libros(3,"El SeÃ±or de los Anillos", "J. R. R. Tolkien",1978,150),
+                new Lista_Libros(4,"El principito", "Antoine de Saint-ExupÃ©ry",1951,140),
                 new Lista_Libros(5,"El hobbit", "Cao Xueqin",1982,100),
-                new Lista_Libros(6,"Sueño en el pabellón rojo", "Lewis Car",1792,100),
-                new Lista_Libros(7,"Las aventuras de Alicia en el país de las maravillas", "Agatha Christie",1865,100),
+                new Lista_Libros(6,"SueÃ±o en el pabellÃ³n rojo", "Lewis Car",1792,100),
+                new Lista_Libros(7,"Las aventuras de Alicia en el paÃ­s de las maravillas", "Agatha Christie",1865,100),
                 new Lista_Libros(8,"Diez negritos", "C. S. Lewis",1939,100),
-                new Lista_Libros(9,"El león, la bruja y el armario", "Dan Brown",1950,85),
-                new Lista_Libros(10,"El código Da Vinci", "J. D. Salinger",2003,80),
+                new Lista_Libros(9,"El leÃ³n, la bruja y el armario", "Dan Brown",1950,85),
+                new Lista_Libros(10,"El cÃ³digo Da Vinci", "J. D. Salinger",2003,80),
                 new Lista_Libros(1,"Migue","Miguel de Cervantes",1650,200)
             };
 
@@ -132,7 +132,7 @@ namespace pjList_Linq_Listview_
             foreach (var grupo in cantidadL)
             {
                 foreach (var item in grupo)
-                {
+                {                                       //tmb puedo usar grupo.Key
                     ListViewItem fila = new ListViewItem(item.Nombres);
                     fila.SubItems.Add(grupo.Count().ToString());
                     lvCantidad.Items.Add(fila);
