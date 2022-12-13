@@ -41,7 +41,10 @@
             this.cboRaza = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvDatos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tsmMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
@@ -57,7 +60,7 @@
             this.tslAcerca});
             this.tsmMenu.Location = new System.Drawing.Point(0, 0);
             this.tsmMenu.Name = "tsmMenu";
-            this.tsmMenu.Size = new System.Drawing.Size(800, 25);
+            this.tsmMenu.Size = new System.Drawing.Size(446, 25);
             this.tsmMenu.TabIndex = 0;
             this.tsmMenu.Text = "toolStrip1";
             // 
@@ -66,24 +69,28 @@
             this.tslRegistrar.Name = "tslRegistrar";
             this.tslRegistrar.Size = new System.Drawing.Size(53, 22);
             this.tslRegistrar.Text = "Registrar";
+            this.tslRegistrar.Click += new System.EventHandler(this.tslRegistrar_Click_1);
             // 
             // tslConsultar
             // 
             this.tslConsultar.Name = "tslConsultar";
             this.tslConsultar.Size = new System.Drawing.Size(58, 22);
             this.tslConsultar.Text = "Consultar";
+            this.tslConsultar.Click += new System.EventHandler(this.tslConsultar_Click);
             // 
             // tslEliminar
             // 
             this.tslEliminar.Name = "tslEliminar";
             this.tslEliminar.Size = new System.Drawing.Size(50, 22);
             this.tslEliminar.Text = "Eliminar";
+            this.tslEliminar.Click += new System.EventHandler(this.tslEliminar_Click);
             // 
             // tslSalir
             // 
             this.tslSalir.Name = "tslSalir";
             this.tslSalir.Size = new System.Drawing.Size(29, 22);
             this.tslSalir.Text = "Salir";
+            this.tslSalir.Click += new System.EventHandler(this.tslSalir_Click);
             // 
             // tslAcerca
             // 
@@ -121,6 +128,10 @@
             // cboRaza
             // 
             this.cboRaza.FormattingEnabled = true;
+            this.cboRaza.Items.AddRange(new object[] {
+            "Pastor Aleman",
+            "Doverman",
+            "Labrador"});
             this.cboRaza.Location = new System.Drawing.Point(197, 198);
             this.cboRaza.Name = "cboRaza";
             this.cboRaza.Size = new System.Drawing.Size(121, 23);
@@ -140,24 +151,46 @@
             this.txtEdad.Size = new System.Drawing.Size(121, 23);
             this.txtEdad.TabIndex = 7;
             // 
-            // listView1
+            // lvDatos
             // 
-            this.listView1.Location = new System.Drawing.Point(74, 276);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(448, 150);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvDatos.GridLines = true;
+            this.lvDatos.Location = new System.Drawing.Point(74, 276);
+            this.lvDatos.Name = "lvDatos";
+            this.lvDatos.Size = new System.Drawing.Size(271, 150);
+            this.lvDatos.TabIndex = 8;
+            this.lvDatos.UseCompatibleStateImageBehavior = false;
+            this.lvDatos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nombre";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Edad";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Raza";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 100;
             // 
             // erpError
             // 
             this.erpError.ContainerControl = this;
             // 
-            // Form1
+            // frmDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(446, 450);
+            this.Controls.Add(this.lvDatos);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.cboRaza);
@@ -165,7 +198,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tsmMenu);
-            this.Name = "Form1";
+            this.Name = "frmDatos";
             this.Text = "Form1";
             this.tsmMenu.ResumeLayout(false);
             this.tsmMenu.PerformLayout();
@@ -189,7 +222,10 @@
         private ComboBox cboRaza;
         private TextBox txtNombre;
         private TextBox txtEdad;
-        private ListView listView1;
+        private ListView lvDatos;
         private ErrorProvider erpError;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }
